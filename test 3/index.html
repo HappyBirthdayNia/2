@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <iframe src="../rose_petals_falling.html" title="Rose petals background" aria-hidden="true"></iframe>
+    </div>
+
+    <div class="content">
+        <main class="container">
+            <div class="wrapper">
+                <div class="book" style="--segments-count: 8">
+                    <div class="book-cover book-cover-wide book-cover-front">
+                        <div class="book-cover-inner book-cover-inner-front">
+                        <div class="book-page book-page-turned"></div>
+                    </div>
+                </div>
+                <div class="book-cover book-cover-wide book-cover-back">
+                    <div class="book-cover-inner"></div>
+                </div>
+                <div class="book-cover book-cover-middle"></div>
+                <div class="book-side book-side-right"></div>
+                <div class="book-side book-side-top"></div>
+                <div class="book-side book-side-bottom"></div>
+                <div class="book-page book-page-stacked">
+                    <!--
+                        CHANGE: This ".book-page-inner" div is the single, stationary
+                        "page 4" surface. Its content used to come from the
+                        ::before pseudo-element background-image, cycling through
+                        --image-page-2 -> --image-page-3 -> --image-page-4.
+                        Since background-image cannot play video, we now insert a
+                        real <video> element as a child of this div instead.
+                        ".book-page-inner" already has `position: relative`
+                        (see style.css), so this absolutely-positioned video fills
+                        it exactly the same way the old background-image did.
+                        Pseudo-elements paint in DOM order, so this video
+                        automatically renders ABOVE the ::before background image
+                        and BELOW the ::after border-image frame, meaning the
+                        page frame/border stays identical with no extra markup.
+                    -->
+                    <div class="book-page-inner">
+                        <!--
+                            CHANGE: added attributes to suppress browser-native
+                            video chrome that could otherwise float on top of the
+                            page (Picture-in-Picture button, AirPlay/remote
+                            playback icon, and the skip-forward/skip-back overlay
+                            controls some browsers show on hover):
+                              - disablePictureInPicture: removes the PiP button
+                                (Chrome/Edge/Safari)
+                              - disableRemotePlayback: removes the AirPlay /
+                                cast icon (Safari/Chrome)
+                              - controlsList: belt-and-suspenders — if "controls"
+                                is ever turned on for debugging, this hides the
+                                download/fullscreen/remote-playback buttons too
+                              - x-webkit-airplay="deny": older Safari/iOS AirPlay
+                                suppression
+                            No "controls" attribute is added, so no click-to-play
+                            UI appears either; the video keeps autoplaying/looping
+                            exactly as before.
+                        -->
+                        <video
+                            class="book-video"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="auto"
+                            disablePictureInPicture
+                            disableRemotePlayback
+                            controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
+                            x-webkit-airplay="deny"
+                        >
+                            <source src="../pictures/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="segment" style="--segment-number: 1">
+                        <div class="segment-side segment-side-front">
+                            <div class="segment-inner"></div>
+                        </div>
+                        <div class="segment-side segment-side-back"></div>
+                        <div class="segment" style="--segment-number: 2">
+                            <div class="segment-side segment-side-front">
+                                <div class="segment-inner"></div>
+                            </div>
+                            <div class="segment-side segment-side-back"></div>
+                            <div class="segment" style="--segment-number: 3">
+                                <div class="segment-side segment-side-front">
+                                    <div class="segment-inner"></div>
+                                </div>
+                                <div class="segment-side segment-side-back"></div>
+                                <div class="segment" style="--segment-number: 4">
+                                    <div class="segment-side segment-side-front">
+                                        <div class="segment-inner"></div>
+                                    </div>
+                                    <div class="segment-side segment-side-back"></div>
+                                    <div class="segment" style="--segment-number: 5">
+                                        <div class="segment-side segment-side-front">
+                                            <div class="segment-inner"></div>
+                                        </div>
+                                        <div class="segment-side segment-side-back"></div>
+                                        <div class="segment" style="--segment-number: 6">
+                                            <div class="segment-side segment-side-front">
+                                                <div class="segment-inner"></div>
+                                            </div>
+                                            <div class="segment-side segment-side-back"></div>
+                                            <div class="segment" style="--segment-number: 7">
+                                                <div class="segment-side segment-side-front">
+                                                    <div class="segment-inner"></div>
+                                                </div>
+                                                <div class="segment-side segment-side-back"></div>
+                                                <div class="segment" style="--segment-number: 8">
+                                                    <div class="segment-side segment-side-front">
+                                                        <div class="segment-inner"></div>
+                                                    </div>
+                                                    <div class="segment-side segment-side-back"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info">
+                <details class="credits">
+                    <summary class="credits-caption"></summary>
+                    <ul>
+                        <li>
+                            Cover -
+                            <a target="_blank" href="https://www.deviantart.com/trongtuan91">https://www.deviantart.com/trongtuan91</a>
+                        </li>
+                        <li>
+                            Pictures -
+                            <a target="_blank" href="https://www.tolkienestate.com">https://www.tolkienestate.com</a>
+                        </li>
+                        <li>
+                            Sheet textures -
+                            <a target="_blank" href="https://www.shutterstock.com">https://www.shutterstock.com</a>
+                        </li>
+                        <li>
+                            Frame -
+                            <a target="_blank" href="https://www.istockphoto.com">https://www.istockphoto.com</a>
+                        </li>
+                        <li>
+                            Scroll icon -
+                            <a target="_blank" href="https://www.svgrepo.com/svg/522650/scroll-down">https://www.svgrepo.com/svg/522650/scroll-down</a>
+                        </li>
+                        <li>Background - ChatGPT</li>
+                    </ul>
+                </details>
+
+                <p class="scroll">
+                    <svg class="scroll-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 6V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15 11L12 14L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <span>დაბლა ჩამოსქროლე</span>
+                </p>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <p class="unsupported">
+        ⚠️ Scroll-driven animations are
+        <a target="_blank" href="https://caniuse.com/mdn-css_properties_animation-timeline_scroll">not supported</a>
+    </p>
+</body>
+</html>
